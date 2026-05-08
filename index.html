@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Crossword Puzzle Game</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Crossword Puzzle</h1>
+            <p>Fill in the words by clue number and direction</p>
+        </header>
+
+        <main class="game-area">
+            <section class="crossword-grid">
+                <div id="grid" class="grid"></div>
+            </section>
+
+            <section class="controls">
+                <div class="input-group">
+                    <label for="clue-number">Clue Number:</label>
+                    <input type="number" id="clue-number" min="1" max="99" placeholder="Enter number">
+                </div>
+
+                <div class="input-group">
+                    <label>Direction:</label>
+                    <div class="direction-buttons">
+                        <button type="button" class="direction-btn" data-direction="across" aria-pressed="true">Across</button>
+                        <button type="button" class="direction-btn" data-direction="down">Down</button>
+                    </div>
+                </div>
+
+                <div class="input-group">
+                    <label for="letter-input">Letter:</label>
+                    <input type="text" id="letter-input" maxlength="1" placeholder="Type letter" autocomplete="off">
+                </div>
+
+                <div class="button-group">
+                    <button type="button" id="clear-cell" class="btn">Clear Cell</button>
+                    <button type="button" id="check-answer" class="btn btn-primary">Check Answer</button>
+                </div>
+
+                <p id="current-word" class="current-word-display"></p>
+            </section>
+        </main>
+
+        <section class="clue-lists">
+            <div class="clue-section">
+                <h2>Across</h2>
+                <ul id="across-clues" class="clue-list"></ul>
+            </div>
+
+            <div class="clue-section">
+                <h2>Down</h2>
+                <ul id="down-clues" class="clue-list"></ul>
+            </div>
+        </section>
+
+        <section id="completion-modal" class="modal" aria-hidden="true">
+            <div class="modal-content">
+                <h2>Congratulations!</h2>
+                <p>You've successfully completed the crossword puzzle!</p>
+                <button type="button" id="restart-btn" class="btn btn-primary">Play Again</button>
+            </div>
+        </section>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
